@@ -1,0 +1,30 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "roots": [
+    "tests",
+    "app",
+    "utils"
+  ],
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+  "transform": {
+    "^.+\\.tsx$": [
+      "ts-jest",
+      {
+        "isolatedModules": true
+      }
+    ]
+  },
+  "moduleNameMapper": {
+    "app/(.*)": "<rootDir>/app/$1",
+    "utils/(.*)": "<rootDir>/utils/$1"
+  }
+}

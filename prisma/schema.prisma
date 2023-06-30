@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_DB_URL") // uses connection pooling
+}
+
+model Story {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  prompt        String
+  title         String
+  cover         String?
+  content       String
+  textModel     String
+  imageModel    String
+  shareUserId   String
+  shareUsername String
+  shareUserType UserType
+  likes         Like[]
+  sharedAt      Int      @db.Long
+}
+
+model GeneratedImage {
+  id     String    @id @default(auto()) @map("_id") @db.ObjectId
+  prompt String
+  url    String
+  type   ImageType
+  at     Int       @db.Long
+}
+
+type Like {
+  id String
+  at Int    @db.Long
+}
+
+enum ImageType {
+  Temporary
+  Persistent
+}
+
+enum UserType {
+  User
+  Visitor
+}
+
+model Visitor {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  ip          String
+  name        String
+  createdAt   Int    @db.Long
+  lastVisited Int    @db.Long
+}
+
+model WriteRequest {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String
+  at     Int    @db.Long
+}

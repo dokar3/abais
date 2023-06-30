@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npx prisma generate && yarn build",
+  "installCommand": "yarn",
+  "crons": [
+    {
+      "path": "/api/cron/clean-temp-images",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
