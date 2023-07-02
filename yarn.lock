@@ -2774,6 +2774,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@vercel/analytics@npm:1.0.1"
+  checksum: 6876e1d0868e85198d43a17ffec7266cdee5a53d5fc797d3f7e0d64e9d76a2ade3cbdcbc0a665e2ee2389f65dfc80591f7d667e9fc981cdbaa848006cbaefe19
+  languageName: node
+  linkType: hard
+
 "abais@workspace:.":
   version: 0.0.0-use.local
   resolution: "abais@workspace:."
@@ -2790,6 +2797,7 @@ __metadata:
     "@types/react": 18.2.13
     "@types/react-dom": 18.2.6
     "@types/uuid": ^9.0.2
+    "@vercel/analytics": ^1.0.1
     ai: ^2.1.7
     autoprefixer: 10.4.14
     eslint: 8.43.0
